@@ -1,15 +1,18 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from 'react';
+import axios from 'axios';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Admin() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [message, setMessage] = useState("");
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setMessage('');
 
     try {
       await axios.post(`${API_URL}/feed`, {
@@ -17,17 +20,18 @@ export default function Admin() {
         description,
       });
 
-      setMessage("Feed added successfully!");
-      setTitle("");
-      setDescription("");
+      setMessage('Feed added successfully!');
+      setTitle('');
+      setDescription('');
     } catch (error) {
-      setMessage("Failed to add feed.");
-      console.error(error);
+      setMessage('Failed to add feed.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
       <h1>Admin - Add Feed</h1>
 
       <form onSubmit={handleSubmit}>
@@ -38,7 +42,7 @@ export default function Admin() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            style={{ width: "300px", padding: "8px", marginBottom: "10px" }}
+            style={{ width: '400px', padding: '10px', marginBottom: '10px' }}
           />
         </div>
 
@@ -48,15 +52,9 @@ export default function Admin() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
-            rows="4"
-            style={{ width: "300px", padding: "8px", marginBottom: "10px" }}
+            rows="5"
+            style={{ width: '400px', padding: '10px', marginBottom: '10px' }}
           />
         </div>
 
-        <button type="submit">Add Feed</button>
-      </form>
-
-      {message && <p>{message}</p>}
-    </div>
-  );
 }
