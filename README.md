@@ -42,18 +42,15 @@ It supports live feed updates without page refresh and uses caching for better p
 
 ## 📁 Project Structure
 
-
-
-![Project Structure](./assets/images/folderstructure.svg)
-
+![Project Structure](./assets/images/folderstructure.png)
 
 ## 🖼️ Screenshots
 
-![Home Page](./assets/images/home.svg)
+![Home Page](./assets/images/home.png)
 
-![Admin Page](./assets/images/admin.svg)
+![Admin Page](./assets/images/admin.png)
 
-![Feed](./assets/images/feed.svg)
+![Feed](./assets/images/feed.png)
 
 
 ## 🤝 Contributors
