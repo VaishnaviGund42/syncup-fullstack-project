@@ -61,4 +61,3 @@ It supports live feed updates without page refresh and uses caching for better p
 <a href="https://github.com/VaishnaviGund42">
   <img src="https://github.com/VaishnaviGund42.png" width="80px;" alt="Vaishnavi"/>
 </a>
-
