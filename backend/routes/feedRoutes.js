@@ -11,7 +11,9 @@ router.get('/', async (req, res) => {
 
     if (cachedFeeds) {
       console.log('Serving from Redis cache');
-      return res.json(JSON.parse(cachedFeeds));
+      return res.json(
+        typeof cachedFeeds === 'string' ? JSON.parse(cachedFeeds) : cachedFeeds
+      );
     }
 
     console.log('Serving from MongoDB');
@@ -21,6 +23,7 @@ router.get('/', async (req, res) => {
 
     res.json(feeds);
   } catch (error) {
+    console.error('Feed fetch error:', error);
     res.status(500).json({ message: error.message });
   }
 });
