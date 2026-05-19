@@ -1,5 +1,5 @@
 const express = require('express');
-const Feed = require('../models/Feed');
+const Feed = require('../models/feed');
 const { redisClient } = require('../config/redis');
 
 const router = express.Router();
