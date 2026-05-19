@@ -45,11 +45,13 @@ It supports live feed updates without page refresh and uses caching for better p
 ![Project Structure](./frontend/assets/images/folderstructure.png)
 
 ## 🖼️ Screenshots
-
+Home Page
 ![Home Page](./frontend/assets/images/home.png)
 
+Admin Page
 ![Admin Page](./frontend/assets/images/admin.png)
 
+Feed page
 ![Feed](./frontend/assets/images/feed.png)
 
 
