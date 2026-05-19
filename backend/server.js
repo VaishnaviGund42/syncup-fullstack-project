@@ -6,7 +6,7 @@ const cors = require('cors');
 const { Server } = require('socket.io');
 
 const connectDB = require('./config/db');
-const { connectRedis } = require('./config/redis');
+const { redisClient, connectRedis } = require('./config/redis');
 const feedRoutes = require('./routes/feedRoutes');
 
 const app = express();
